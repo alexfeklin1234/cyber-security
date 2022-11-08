@@ -1,0 +1,16 @@
+{
+  "name": "dos_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "node index.js": "index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ddos-stress": "^0.1.0",
+    "express": "^4.18.2",
+    "nodejs": "^0.0.0"
+  }
+}
