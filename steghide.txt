@@ -1,0 +1,8 @@
+INSTALL:
+which steghide
+sudo apt-get install steghide -y
+
+USE:
+steghide embed -cf 'IMG' -ef 'TEXT'
+steghide info 'IMG'
+steghide embed -cf 'IMG' -ef 'TEXT'

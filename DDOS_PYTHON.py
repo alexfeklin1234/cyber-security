@@ -4,7 +4,7 @@ import requests
 def dos():
  while True:
   print('nice!')
-  requests.get("https://ffotostreet.tilda.ws/")   # <== site name
+  requests.get('https://ffotostreet.tilda.ws/')   # <== site name
 
   
 while True:
