@@ -1,0 +1,26 @@
+{
+  "name": "bomber-api",
+  "version": "2.0.1",
+  "description": "Convenient API for creating your own SMS bomber",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shketov/bomber-api.git"
+  },
+  "author": "shketov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "open": "^7.3.1",
+    "path": "0.12.7",
+    "request": "^2.88.2",
+    "yargs": "^16.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/shketov/bomber-api/issues"
+  },
+  "homepage": "https://github.com/shketov/bomber-api#readme"
+}

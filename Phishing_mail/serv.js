@@ -1,3 +1,4 @@
+const IP = require('ip');
 const express = require('express');
 const app = express();
 const http = require('http');
@@ -7,7 +8,16 @@ const io = new Server(server);
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/mail.html');
+  let timenowunix = Date.now() // unix time
+  let timenow = new Date(timenowunix).toLocaleTimeString("ru") // unix time to real time
+  const ipAddress = IP.address(); // user's ip address
+  console.log('ip: ', ipAddress) //return to console: ip address
+  console.log('time: ',  timenow) //return to console: real time
 });
+
+
+
+
 
 
 
